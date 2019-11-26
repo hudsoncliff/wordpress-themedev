@@ -24,7 +24,8 @@ gulp.task('style', function(){
             errorHandler: notify.onError("Error: <%= error.message %>")
         }))
         .pipe(sass({ outputStyle: 'compressed'}))
-        .pipe(autoprefixer({browsers: ["last 2 versions"]}))
+        // .pipe(autoprefixer({browsers: ["last 2 versions"]}))
+        .pipe(autoprefixer())
         .pipe(cleanCss({debug: true}, (details) => {
             console.log(`${details.name}: ${details.stats.originalSize}`);
             console.log(`${details.name}: ${details.stats.minifiedSize}`);
@@ -62,4 +63,4 @@ gulp.task('watch', function(){
     gulp.watch([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss'], gulp.task('scss'));
     gulp.watch(paths.src + paths.css + '**/*.css', gulp.task('cssmin'));
     gulp.watch([paths.src + paths.js + '**/*.js','!' + paths.src + paths.js + paths.ignore + '**/*.js'], gulp.task('js'));
-})
+});
