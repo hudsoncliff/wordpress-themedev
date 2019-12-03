@@ -6,6 +6,12 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
+    changed  = require('gulp-changed'),
+    imagemin = require('gulp-imagemin'),
+    imageminJpg = require('imagemin-jpeg-recompress'),
+    imageminPng = require('imagemin-pngquant'),
+    imageminGif = require('imagemin-gifsicle'),
+    svgmin = require('gulp-svgmin'),
     autoprefixer = require('gulp-autoprefixer'),
     paths = {
         themeRoot:        './',
@@ -24,7 +30,6 @@ gulp.task('style', function(){
             errorHandler: notify.onError("Error: <%= error.message %>")
         }))
         .pipe(sass({ outputStyle: 'compressed'}))
-        // .pipe(autoprefixer({browsers: ["last 2 versions"]}))
         .pipe(autoprefixer())
         .pipe(cleanCss({debug: true}, (details) => {
             console.log(`${details.name}: ${details.stats.originalSize}`);
@@ -41,7 +46,7 @@ gulp.task('cssmin', function(){
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
     }))
     .pipe(rename({ extname: ".min.css" }))
-    .pipe(gulp.dest(paths.assets + paths.css));
+    .pipe(gulp.dest(paths.dist + paths.css));
 });
 
 //Uglify JavaScript files
@@ -51,10 +56,39 @@ gulp.task('js', function () {
         .pipe(babel({
             presets: ['@babel/env'],
         }))
-        .pipe(gulp.dest(paths.assets + paths.js))
+        .pipe(gulp.dest(paths.distJs))
         .pipe(uglify())
         .pipe(rename({ extname: ".min.js" }))
-        .pipe(gulp.dest(paths.assets + paths.js));
+        .pipe(gulp.dest(paths.dist + paths.js));
+});
+
+// jpg,png,gif画像の圧縮タスク
+gulp.task('imagemin', function(callback){
+    var srcGlob = paths.src + paths.img + '**/*.+(jpg|jpeg|png|gif)';
+    var dstGlob = paths.assets + paths.img;
+    gulp.src( srcGlob )
+    .pipe(plumber())
+    .pipe(changed( dstGlob ))
+    .pipe(imagemin([
+        imageminPng(),
+        imageminJpg(),
+        imageminGif({
+            interlaced: false,
+            optimizationLevel: 3,
+            colors:180
+        })
+    ]))
+    .pipe(gulp.dest( dstGlob ));
+    callback();
+});
+// svg画像の圧縮タスク
+gulp.task('svgmin', function(){
+    var srcGlob = paths.srcImg + '/**/*.+(svg)';
+    var dstGlob = paths.dstImg;
+    gulp.src( srcGlob )
+    .pipe(changed( dstGlob ))
+    .pipe(svgmin())
+    .pipe(gulp.dest( dstGlob ));
 });
 
 //watching task
