@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "build": "gulp style cssmin"
   },
   "author": "Kai",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.2",
     "gulp-clean-css": "^4.0.0",
     "gulp-imagemin": "^6.2.0",
     "gulp-notify": "^3.2.0",
