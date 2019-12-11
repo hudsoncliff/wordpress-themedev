@@ -23,50 +23,50 @@ var gulp = require('gulp'),
     };
 
 //style.scss compiler
-gulp.task('style', function(){
+gulp.task('style', () => {
     return gulp
-        .src(paths.src + paths.css + 'style.scss')
-        .pipe(plumber({
-            errorHandler: notify.onError("Error: <%= error.message %>")
-        }))
-        .pipe(sass({ outputStyle: 'compressed'}))
-        .pipe(autoprefixer())
-        .pipe(cleanCss({debug: true}, (details) => {
-            console.log(`${details.name}: ${details.stats.originalSize}`);
-            console.log(`${details.name}: ${details.stats.minifiedSize}`);
-        }))
-        .pipe(gulp.dest(paths.themeRoot));
+    .src(paths.src + paths.css + 'style.scss')
+    .pipe(plumber({
+        errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
+    .pipe(sass({ outputStyle: 'compressed'}))
+    .pipe(autoprefixer())
+    .pipe(cleanCss({debug: true}, (details) => {
+        console.log(`${details.name}: ${details.stats.originalSize}`);
+        console.log(`${details.name}: ${details.stats.minifiedSize}`);
+    }))
+    .pipe(gulp.dest(paths.themeRoot));
 });
 
 //just minify for css libraries
-gulp.task('cssmin', function(){
+gulp.task('cssmin', () => {
     return gulp.src(paths.src + paths.css + '**/*.css')
     .pipe(cleanCss({debug: true}, (details) => {
         console.log(`${details.name}: ${details.stats.originalSize}`);
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
     }))
     .pipe(rename({ extname: ".min.css" }))
-    .pipe(gulp.dest(paths.assets + paths.css));
+    .pipe(gulp.dest(paths.dist + paths.css));
 });
 
 //Uglify JavaScript files
-gulp.task('js', function () {
+gulp.task('js', () => {
     return gulp
-        .src([paths.src + paths.js + '**/*.js','!' + paths.src + paths.js + paths.ignore + '**/*.js'])
-        .pipe(babel({
-            presets: ['@babel/env'],
-        }))
-        .pipe(gulp.dest(paths.assets + paths.js))
-        .pipe(uglify())
-        .pipe(rename({ extname: ".min.js" }))
-        .pipe(gulp.dest(paths.assets + paths.js));
+    .src([paths.src + paths.js + '**/*.js','!' + paths.src + paths.js + paths.ignore + '**/*.js'])
+    .pipe(babel({
+        presets: ['@babel/env'],
+    }))
+    .pipe(gulp.dest(paths.distJs))
+    .pipe(uglify())
+    .pipe(rename({ extname: ".min.js" }))
+    .pipe(gulp.dest(paths.dist + paths.js));
 });
 
 // jpg,png,gif画像の圧縮タスク
-gulp.task('imagemin', function(callback){
+gulp.task('imagemin', () => {
     var srcGlob = paths.src + paths.img + '**/*.+(jpg|jpeg|png|gif)';
     var dstGlob = paths.assets + paths.img;
-    gulp.src( srcGlob )
+    return gulp.src( srcGlob )
     .pipe(plumber())
     .pipe(changed( dstGlob ))
     .pipe(imagemin([
@@ -79,20 +79,19 @@ gulp.task('imagemin', function(callback){
         })
     ]))
     .pipe(gulp.dest( dstGlob ));
-    callback();
 });
 // svg画像の圧縮タスク
-gulp.task('svgmin', function(){
-    var srcGlob = paths.src + paths.img + '/**/*.+(svg)';
-    var dstGlob = paths.assets + paths.img;
-    gulp.src( srcGlob )
+gulp.task('svgmin', () => {
+    var srcGlob = paths.srcImg + '/**/*.+(svg)';
+    var dstGlob = paths.dstImg;
+    return gulp.src( srcGlob )
     .pipe(changed( dstGlob ))
     .pipe(svgmin())
     .pipe(gulp.dest( dstGlob ));
 });
 
 //watching task
-gulp.task('watch', function(){
+gulp.task('watch', () => {
     gulp.watch(paths.src + paths.css + '**/*.scss', gulp.task('style'));
     gulp.watch([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss'], gulp.task('scss'));
     gulp.watch(paths.src + paths.css + '**/*.css', gulp.task('cssmin'));
