@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     autoprefixer = require('gulp-autoprefixer'),
     paths = {
-        themeRoot:        './',
+        root:       './',
         src:        'src/',
         assets:     'assets/',
         css:        'css/',
@@ -35,7 +35,7 @@ gulp.task('style', () => {
         console.log(`${details.name}: ${details.stats.originalSize}`);
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
     }))
-    .pipe(gulp.dest(paths.themeRoot));
+    .pipe(gulp.dest(paths.root));
 });
 
 //その他のscss用のコンパイル
