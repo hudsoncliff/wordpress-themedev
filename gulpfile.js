@@ -38,6 +38,22 @@ gulp.task('style', () => {
     .pipe(gulp.dest(paths.themeRoot));
 });
 
+//その他のscss用のコンパイル
+gulp.task('scss', () => {
+    return gulp
+    .src([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss'])
+    .pipe(plumber({
+        errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
+    .pipe(sass({ outputStyle: 'compressed'}))
+    .pipe(autoprefixer())
+    .pipe(cleanCss({debug: true}, (details) => {
+        console.log(`${details.name}: ${details.stats.originalSize}`);
+        console.log(`${details.name}: ${details.stats.minifiedSize}`);
+    }))
+    .pipe(gulp.dest(paths.assets + paths.css));
+});
+
 //just minify for css libraries
 gulp.task('cssmin', () => {
     return gulp.src(paths.src + paths.css + '**/*.css')
@@ -46,7 +62,7 @@ gulp.task('cssmin', () => {
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
     }))
     .pipe(rename({ extname: ".min.css" }))
-    .pipe(gulp.dest(paths.dist + paths.css));
+    .pipe(gulp.dest(paths.assets + paths.css));
 });
 
 //Uglify JavaScript files
@@ -56,10 +72,10 @@ gulp.task('js', () => {
     .pipe(babel({
         presets: ['@babel/env'],
     }))
-    .pipe(gulp.dest(paths.distJs))
+    .pipe(gulp.dest(paths.assets + paths.js))
     .pipe(uglify())
     .pipe(rename({ extname: ".min.js" }))
-    .pipe(gulp.dest(paths.dist + paths.js));
+    .pipe(gulp.dest(paths.assets + paths.js));
 });
 
 // jpg,png,gif画像の圧縮タスク
@@ -82,8 +98,8 @@ gulp.task('imagemin', () => {
 });
 // svg画像の圧縮タスク
 gulp.task('svgmin', () => {
-    var srcGlob = paths.srcImg + '/**/*.+(svg)';
-    var dstGlob = paths.dstImg;
+    var srcGlob = paths.src + paths.img + '/**/*.+(svg)';
+    var dstGlob = paths.assets + paths.img;
     return gulp.src( srcGlob )
     .pipe(changed( dstGlob ))
     .pipe(svgmin())
