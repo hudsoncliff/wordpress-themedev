@@ -18,6 +18,17 @@ boilerplate for wordpress theme development
 ├─.gitignore
 ```
 
+# Local WordPress
+```
+wp-env start
+```
+
+```
+wp-env stop
+```
+
+[@wordpress/envハンドブック](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-env/)
+
 # Gulp
 
 start developing with
