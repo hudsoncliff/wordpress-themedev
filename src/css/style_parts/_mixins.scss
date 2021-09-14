@@ -5,7 +5,16 @@ $breakpoints: (
 
 $primary_color: #f00;
 
-$font-family: 'Noto Sans JP', sans-serif;
+@font-face {
+	font-family: 'MyYuGothicM';
+	font-weight: normal;
+	src: local('YuGothic-Medium'), /* PostScript Name = localの正式な指定方法 */
+	local('Yu Gothic Medium'),     /* PostScript Nameを認識できないChrome用にFull Nameを指定 */
+	local('YuGothic-Regular');     /* 游ゴシックMediumが存在しないWindows8.1用 */
+}
+
+$font-gothic: YuGothic, 'Yu Gothic', sans-serif;
+$font-mincho: YuMincho, 'Yu Mincho', serif;
 
 @mixin mq($breakpoint: pc) {
     @media #{map-get($breakpoints, $breakpoint)} {
