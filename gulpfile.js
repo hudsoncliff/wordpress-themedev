@@ -28,45 +28,9 @@ const { gulp, parallel, src, dest, watch } = require('gulp'),
         img:        'img/',
     };
 
-//Uglify JavaScript files
-// gulp.task('js', () => {
-    
-    // return gulp
-    // .src([paths.src + paths.js + '**/*.js','!' + paths.src + paths.js + paths.ignore + '**/*.js'])
-    // .pipe(babel({
-    //     presets: ['@babel/env'],
-    // }))
-    // .pipe(gulp.dest(paths.assets + paths.js))
-    // .pipe(uglify())
-    // .pipe(rename({ extname: ".min.js" }))
-    // .pipe(gulp.dest(paths.assets + paths.js));
-
-//     let scriptList = [
-//         'main'
-//     ]
-
-//     return browserify({
-//         'entries': [paths.src + paths.js + scriptList[0] + '.js'],
-//         'transform': [
-//             ['babelify', { 'presets': ['@babel/env']}]
-//     ]}) // browserify の設定をして・・・
-//     .bundle() // 一つのファイルにまとめたものを 
-//     .pipe(source(scriptList[0] + '.js')) // bundle.js という名前のファイルに記録して
-//     .pipe(gulp.dest(paths.assets + paths.js)) // "./" に書き出します
-
-// });
-
-//watching task
-// gulp.task('watch', () => {
-//     gulp.watch(paths.src + paths.css + '**/*.scss', gulp.task('style'));
-//     gulp.watch([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss'], gulp.task('scss'));
-//     gulp.watch(paths.src + paths.css + '**/*.css', gulp.task('cssmin'));
-//     gulp.watch([paths.src + paths.js + '**/*.js','!' + paths.src + paths.js + paths.ignore + '**/*.js'], gulp.task('js'));
-// });
-
 //styleファイルの生成
 const styleCss = function() {
-    return src(paths.src + paths.css + 'style.scss')
+    return src([paths.src + paths.css + 'style.scss',paths.src + paths.css + 'style_parts/**/*.scss'])
     .pipe(plumber({
         errorHandler: notify.onError("Error: <%= error.message %>")
     }))
@@ -81,7 +45,7 @@ const styleCss = function() {
 
 //その他のscss用のコンパイル
 const normalScss = () => {
-    return src([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss'])
+    return src([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss','!' + paths.src + paths.css + 'style_parts/**/*.scss'])
     .pipe(plumber({
         errorHandler: notify.onError("Error: <%= error.message %>")
     }))
@@ -167,7 +131,7 @@ exports.build = parallel(
 );
 
 exports.watch = function() {
-    watch(paths.src + paths.css + 'style.scss', styleCss)
-    watch([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss'], normalScss)
+    watch([paths.src + paths.css + 'style.scss',paths.src + paths.css + 'style_parts/**/*.scss'], styleCss)
+    watch([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss','!' + paths.src + paths.css + 'style_parts/**/*.scss'], normalScss)
     watch(paths.src + paths.js + '**/*.js', jsTrans)
 };
