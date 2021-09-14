@@ -1,0 +1,13 @@
+a{
+    color: #333;
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+img{
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
