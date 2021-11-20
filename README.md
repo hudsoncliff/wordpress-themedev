@@ -18,13 +18,19 @@ boilerplate for wordpress theme development
 ├─.gitignore
 ```
 
-# Local WordPress
+# wp-env
 ```
 wp-env start
 ```
 
 ```
 wp-env stop
+```
+
+## wp-cliを使う
+
+```
+wp-env run cli wp 
 ```
 
 [@wordpress/envハンドブック](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-env/)
@@ -34,4 +40,9 @@ wp-env stop
 start developing with
 ```
 npm start
+```
+
+build css js img files
+```
+gulp build
 ```
