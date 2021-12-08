@@ -1,6 +1,8 @@
 $breakpoints: (
 	'sp': 'screen and (max-width: 480px)', //スマートフォン ブレイクポイント
-	'pc': 'screen and (max-width: 767px)' //一般PC ブレイクポイント
+    'mobile': 'screen and (max-width: 767px)', //一般PC ブレイクポイント
+	'pc': 'screen and (min-width: 768px)' //一般PC ブレイクポイント
+    'wide': 'screen and (min-width: 1280px)' //1280px以上の画面
 ) !default;
 
 $primary_color: #f00;
@@ -16,7 +18,7 @@ $primary_color: #f00;
 $font-gothic: YuGothic, 'Yu Gothic', sans-serif;
 $font-mincho: YuMincho, 'Yu Mincho', serif;
 
-@mixin mq($breakpoint: pc) {
+@mixin mq($breakpoint: mobile) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
