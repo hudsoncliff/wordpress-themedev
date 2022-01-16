@@ -1,7 +1,7 @@
 $breakpoints: (
 	'sp': 'screen and (max-width: 480px)', //スマートフォン ブレイクポイント
     'mobile': 'screen and (max-width: 767px)', //一般PC ブレイクポイント
-	'pc': 'screen and (min-width: 768px)' //一般PC ブレイクポイント
+	'pc': 'screen and (min-width: 768px)', //一般PC ブレイクポイント
     'wide': 'screen and (min-width: 1280px)' //1280px以上の画面
 ) !default;
 
