@@ -19,10 +19,10 @@ boilerplate for wordpress theme development
 ```
 
 # Recommended
-npm
-gulp
-docker
-wp-env
+ - npm
+ - gulp
+ - docker
+ - wp-env
 
 # wp-env
 ```
