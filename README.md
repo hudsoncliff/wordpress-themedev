@@ -8,15 +8,21 @@ boilerplate for wordpress theme development
 ├─ functions.php
 ├─ style.css
 ├─ assets				# compiled files
-│  ├─ images
+│  ├─ img
 │  ├─ css
 │  └─ js
 ├─ src				# original files
-│  ├─ images
+│  ├─ img
 │  ├─ css
 │  └─ js
 ├─.gitignore
 ```
+
+# Recommended
+npm
+gulp
+docker
+wp-env
 
 # wp-env
 ```
