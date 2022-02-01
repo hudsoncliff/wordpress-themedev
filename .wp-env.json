@@ -1,15 +1,15 @@
 {
     "core": null,
     "plugins": [ 
-        "https://downloads.wordpress.org/plugin/contact-form-7.5.5.2.zip", 
+        "https://downloads.wordpress.org/plugin/contact-form-7.5.5.4.zip", 
         "https://downloads.wordpress.org/plugin/show-current-template.0.4.6.zip", 
-        "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.50.zip",
+        "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.53.zip",
         "https://downloads.wordpress.org/plugin/login-customizer.2.1.6.zip",
         "https://downloads.wordpress.org/plugin/my-calendar.3.2.17.zip",
         "https://downloads.wordpress.org/plugin/wp-media-library-categories.1.9.9.zip",
         "https://downloads.wordpress.org/plugin/mw-wp-form.4.4.0.zip",
-        "https://downloads.wordpress.org/plugin/smart-slider-3.3.5.1.1.zip",
-        "https://downloads.wordpress.org/plugin/breadcrumb-navxt.6.6.0.zip"
+        "https://downloads.wordpress.org/plugin/smart-slider-3.3.5.1.3.zip",
+        "https://downloads.wordpress.org/plugin/breadcrumb-navxt.7.0.2.zip"
     ],
     "themes": [ "." ]
 }

@@ -69,6 +69,28 @@ const cssMinify = () => {
     .pipe(dest(paths.assets + paths.css));
 }
 
+//jsファイルのトランスパイル
+const jsTrans = () => {
+
+    return src(paths.src + paths.js + '**/*.js')
+    .pipe(through2.obj((file, enc, callback) => {
+      browserify(file.path)
+        .transform('babelify', { presets: ['@babel/env'] })
+        .bundle((err, buf) => {
+          if (err !== null) {
+            return callback(new PluginError('browserify', err, {
+              showProperties: true,
+            }));
+          }
+          file.contents = buf;
+          callback(err, file);
+        });
+    }))
+    .pipe(terser())
+    .pipe(dest(paths.assets + paths.js));
+
+}
+
 // jpg,png,gif画像の圧縮タスク
 const imgMinify = () => {
     var srcGlob = paths.src + paths.img + '**/*.+(jpg|jpeg|png|gif)';
@@ -96,29 +118,6 @@ const svgMinify = () => {
     .pipe(changed( dstGlob ))
     .pipe(svgmin())
     .pipe(dest( dstGlob ));
-}
-
-//jsファイルのトランスパイル
-const jsTrans = () => {
-
-    return src(paths.src + paths.js + '**/*.js')
-    .pipe(through2.obj((file, enc, callback) => {
-      browserify(file.path)
-        // ↓ 追加
-        .transform('babelify', { presets: ['@babel/env'] })
-        .bundle((err, buf) => {
-          if (err !== null) {
-            return callback(new PluginError('browserify', err, {
-              showProperties: true,
-            }));
-          }
-          file.contents = buf;
-          callback(err, file);
-        });
-    }))
-    .pipe(terser())
-    .pipe(dest(paths.assets + paths.js));
-
 }
 
 exports.build = parallel(

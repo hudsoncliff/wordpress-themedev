@@ -1,5 +1,5 @@
 /*!
 Theme Name: WP Theme Simple Boiler
 Author: KaiOno
-Version: 1.5
-*/body{background-color:#f0f0f0;color:red;font-family:"Noto Sans JP",sans-serif}
+Version: 1.0
+*/@font-face{font-family:MyYuGothicM;font-weight:400;src:local("YuGothic-Medium"),local("Yu Gothic Medium"),local("YuGothic-Regular")}body{background-color:#fff;color:#333;font-family:YuGothic,"Yu Gothic",sans-serif;line-height:1.5;font-size:16px}a{color:#333;text-decoration:none;-webkit-transition:.3s all;transition:.3s all}a:hover{text-decoration:none}img{vertical-align:top;max-width:100%;height:auto}
