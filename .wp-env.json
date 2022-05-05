@@ -1,5 +1,5 @@
 {
-    "core": null,
+    "core": "https://ja.wordpress.org/latest-ja.zip",
     "plugins": [ 
         "https://downloads.wordpress.org/plugin/contact-form-7.5.5.4.zip", 
         "https://downloads.wordpress.org/plugin/show-current-template.0.4.6.zip", 
