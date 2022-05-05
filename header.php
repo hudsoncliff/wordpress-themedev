@@ -15,7 +15,7 @@
             if ( function_exists( 'the_custom_logo' ) &&  has_custom_logo() ) {
                 the_custom_logo();
             } else {
-                echo ''<h1><a href="' . esc_url( home_url() ) . '"><img src="' . get_theme_file_uri('assets/img/global-logo.svg') . '" alt="' . get_bloginfo( 'name' ) . '"></a></h1>';
+                echo '<h1 class="header-logo"><a href="' . esc_url( home_url() ) . '"><img class="header-logo-img" src="' . get_theme_file_uri('assets/img/logo_main.svg') . '" alt="' . get_bloginfo( 'name' ) . '"></a></h1>';
             }
             $menu_args = [
                 'menu_class' => 'global-menu',
