@@ -17,10 +17,10 @@
 		    <div class="post-meta">
 			<date><?php the_time('Y年m月d日');?></date>
 			<?php
-		    $cat_data = get_the_category(get_the_ID())[0];
-		    $cat_output = '<a href="' . get_category_link($cat_data->term_id) . '" class="post-category-tag">' . $cat_data->name . '</a>';
-		    echo $cat_output;
-		    ?>
+			    $cat_data = get_the_category(get_the_ID())[0];
+			    $cat_output = '<a href="' . get_category_link($cat_data->term_id) . '" class="post-category-tag">' . $cat_data->name . '</a>';
+			    echo $cat_output;
+		    	?>
 			<h3 class="posts-list-title">
 			    <a href="<?php echo get_the_permalink(); ?>">
 				<?php the_title();?>
