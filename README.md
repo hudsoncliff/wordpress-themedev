@@ -52,3 +52,18 @@ build css js img files
 ```
 gulp build
 ```
+
+# All In On Migrationの容量開放
+
+```
+wp-env run cli vi .htaccess
+```
+
+.htaccessファイルを開いて下記設定を追記
+```
+php_value upload_max_filesize 128M
+php_value post_max_size 128M
+php_value memory_limit 256M
+php_value max_execution_time 300
+php_value max_input_time 300
+```
