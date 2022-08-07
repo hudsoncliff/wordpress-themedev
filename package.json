@@ -6,13 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp watch",
-    "build": "gulp style cssmin"
+    "build": "gulp style cssmin",
+    "start-build": "wp-scripts start",
+    "build:scripts": "wp-scripts build"
   },
   "author": "Kai",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
+    "@wordpress/scripts": "^23.6.0",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "gulp": "^4.0.2",
