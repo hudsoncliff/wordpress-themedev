@@ -10,7 +10,7 @@
         </article>
     <?php endwhile ; ?>
 <?php else : ?>
-    <p>アクセスしたページにコンテンツが見つかりませんでした。</p>
+    <p align="center">アクセスしたページにコンテンツが見つかりませんでした。</p>
 <?php endif ; ?>
 
 <?php get_footer(); ?>
