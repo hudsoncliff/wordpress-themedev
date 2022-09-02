@@ -18,7 +18,7 @@
             <?php endwhile ; ?>
         </ul>
     <?php else : ?>
-        コンテンツがありません
+        <p align="center">コンテンツがありません</p>
     <?php endif ; ?>
 
 </section>
