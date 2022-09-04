@@ -12,11 +12,11 @@
 <div id="wrapper">
     <header id="header">
         <?php
-            if ( function_exists( 'the_custom_logo' ) &&  has_custom_logo() ) {
-                the_custom_logo();
-            } else {
-                echo '<h1 class="header-logo"><a href="' . esc_url( home_url() ) . '"><img class="header-logo-img" src="' . get_theme_file_uri('assets/img/logo_main.svg') . '" alt="' . get_bloginfo( 'name' ) . '"></a></h1>';
-            }
+        if (function_exists('the_custom_logo') &&  has_custom_logo() ) {
+            the_custom_logo();
+        } else {
+            echo '<h1 class="header-logo"><a href="' . esc_url(home_url()) . '"><img class="header-logo-img" src="' . get_theme_file_uri('assets/img/logo_main.svg') . '" alt="' . get_bloginfo('name') . '"></a></h1>';
+        }
             $menu_args = [
                 'menu_class' => 'global-menu',
                 'container' => 'nav',
@@ -25,7 +25,7 @@
                 'link_after' => '</span>',
                 'theme_location' => 'header-menu',
             ];
-            wp_nav_menu( $menu_args );
-        ?>
+            wp_nav_menu($menu_args);
+            ?>
     </header>
     <main id="main">

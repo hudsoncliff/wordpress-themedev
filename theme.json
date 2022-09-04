@@ -1,20 +1,20 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/theme.json",
-    "version": 2,
-    "settings": {
-        "color": {
-            "palette": [
-                {
-                    "name": "Primary",
-                    "slug": "primary",
-                    "color": "#563500"
-                },
-                {
-                    "name": "Secondary",
-                    "slug": "secondary",
-                    "color": "#c1a56c"
-                }
-            ]
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#563500"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "color": "#c1a56c"
         }
+      ]
     }
+  }
 }

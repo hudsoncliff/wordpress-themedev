@@ -1,0 +1,21 @@
+{
+  "name": "flatorm/wordpress-themedev",
+  "type": "wordpress-theme",
+  "authors": [
+    {
+      "name": "Kai Ono",
+      "email": "hudsonlciffs1999@gmail.com"
+    }
+  ],
+  "require": {
+    "squizlabs/php_codesniffer": "*"
+  },
+  "scripts": {
+    "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+  },
+  "extra": {
+    "google/apiclient-services": [
+      "Calendar"
+    ]
+  }
+}

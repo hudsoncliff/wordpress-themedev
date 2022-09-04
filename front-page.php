@@ -4,7 +4,7 @@
 
     <h2 class="section-title">お知らせ</h2>
 
-    <?php if( have_posts() ) : ?>
+    <?php if(have_posts() ) : ?>
         <ul class="new-posts-list">
             <?php while( have_posts() ) : the_post(); ?>
                 <li <?php post_class(); ?>>

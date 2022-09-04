@@ -1,21 +1,23 @@
 {
-    "core": "https://ja.wordpress.org/latest-ja.zip",
-    "plugins": [ 
-        "https://downloads.wordpress.org/plugin/contact-form-7.5.6.1.zip", 
-        "https://downloads.wordpress.org/plugin/show-current-template.0.4.6.zip", 
-        "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.62.zip",
-        "https://downloads.wordpress.org/plugin/login-customizer.2.1.9.zip",
-        "https://downloads.wordpress.org/plugin/wp-media-library-categories.1.9.9.zip",
-        "https://downloads.wordpress.org/plugin/mw-wp-form.4.4.1.zip",
-        "https://downloads.wordpress.org/plugin/smart-slider-3.3.5.1.7.zip",
-        "https://downloads.wordpress.org/plugin/breadcrumb-navxt.7.1.0.zip",
-        "https://downloads.wordpress.org/plugin/debug-bar.1.1.3.zip",
-        "https://downloads.wordpress.org/plugin/widget-importer-exporter.1.6.zip"
-    ],
-    "themes": [ "." ],
-    "config": {
-        "WP_DEBUG": true,
-        "WP_UPLOAD_MAX_FILESIZE": "128M",
-        "WP_MEMORY_LIMIT": "256M"
-    }
+  "core": "https://ja.wordpress.org/latest-ja.zip",
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/contact-form-7.5.6.1.zip",
+    "https://downloads.wordpress.org/plugin/show-current-template.0.4.6.zip",
+    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.62.zip",
+    "https://downloads.wordpress.org/plugin/login-customizer.2.1.9.zip",
+    "https://downloads.wordpress.org/plugin/wp-media-library-categories.1.9.9.zip",
+    "https://downloads.wordpress.org/plugin/mw-wp-form.4.4.1.zip",
+    "https://downloads.wordpress.org/plugin/smart-slider-3.3.5.1.7.zip",
+    "https://downloads.wordpress.org/plugin/breadcrumb-navxt.7.1.0.zip",
+    "https://downloads.wordpress.org/plugin/debug-bar.1.1.3.zip",
+    "https://downloads.wordpress.org/plugin/widget-importer-exporter.1.6.zip"
+  ],
+  "themes": [
+    "."
+  ],
+  "config": {
+    "WP_DEBUG": true,
+    "WP_UPLOAD_MAX_FILESIZE": "128M",
+    "WP_MEMORY_LIMIT": "256M"
+  }
 }

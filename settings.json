@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 4,
+  "editor.insertSpaces": false,
+  "phpcs.standard": "Wordpress",
+  "editor.formatOnSave": true,
+  "phpcs.executablePath": "/Users/[username]/.composer/vendor/bin/phpcs",
+  "phpcbf.standard": "WordPress",
+  "phpcbf.executablePath": "/Users/[username]/.composer/vendor/bin/phpcbf",
+  "phpcbf.onsave": true,
+  "editor.defaultFormatter": "simone-baldini.vscode-phpcbf"
+}
