@@ -1,7 +1,7 @@
 # wordpress-themedev
 boilerplate for wordpress theme development
 
-# Directory Structure
+# File Structure
 ```
 ├─themes/your-theme		# theme root     
 ├─ index.php
@@ -23,8 +23,16 @@ boilerplate for wordpress theme development
  - gulp
  - docker
  - wp-env
+ - composer
+ - phpcs
 
-# wp-env
+## settings.json設定
+```
+phpcs.executablePath
+phpcbf.executablePath
+```
+
+## wp-env
 ```
 wp-env start
 ```
@@ -41,7 +49,7 @@ wp-env run cli wp
 
 [@wordpress/envハンドブック](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-env/)
 
-# Gulp
+## Gulp
 
 start developing with
 ```
