@@ -41,6 +41,13 @@ wp-env start
 wp-env stop
 ```
 
+## npm
+
+develop block modules
+```
+npm run start-build
+```
+
 ## wp-cliを使う
 
 ```
