@@ -1,6 +1,33 @@
 # wordpress-themedev
 boilerplate for wordpress theme development
 
+## はじめにやること
+
+* ライブラリのインストール
+下記のいずれか  
+`npm install`  
+`yarn`
+
+* sanitize.cssなどをbuild  
+`npx gulp build`  
+`/assets`ディレクトリが生成される
+
+## 開発ノウハウ
+
+* 作成時のミドルウェアバージョンは以下
+
+```
+$ npm -v
+8.1.2
+$ node -v
+v16.13.1
+```
+
+* 画像やjsやcssはsrc配下へ配置すること
+* 画像をsrcへ配置したあとは`gulp build`を実行するとassetsに画像が配置される
+* ローカル環境で開発をする際には、`yarn start`を実行するとファイル監視状態になる
+  * .scssファイルとjsファイルは編集するとコンパイルされたファイルが`assets`に配置される
+
 # File Structure
 ```
 ├─themes/your-theme		# theme root     
