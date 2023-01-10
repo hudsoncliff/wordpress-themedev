@@ -1,0 +1,15 @@
+/node_modules
+package-lock.json
+package.json
+.gitignore
+/.github
+/.git
+/src
+gulpfile.js
+README.md
+deploy-exclude.txt
+/docs
+LICENSE
+composer.json
+composer.lock
+.wp-env.json
