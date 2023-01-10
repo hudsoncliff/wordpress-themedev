@@ -46,7 +46,7 @@ v16.13.1
 ```
 
 # Recommended
- - npm
+ - npm or yarn
  - gulp
  - docker
  - wp-env
@@ -68,9 +68,10 @@ wp-env start
 wp-env stop
 ```
 
-## npm
+## WorｄPressのブロック開発
 
-develop block modules
+下記コマンドでブロック開発監視モードに変わる。
+初期は`src/index.js`が監視対象
 ```
 npm run start-build
 ```
