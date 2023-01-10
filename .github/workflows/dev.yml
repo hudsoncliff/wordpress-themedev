@@ -18,5 +18,6 @@
 #         path: ./
 #         remote_path: ${{ secrets.SERVER_DIR_DEV }}
 #         remote_host: ${{ secrets.SERVER_DESTINATION_DEV }}
+#         remote_port: ${{ secrets.SERVER_PORT_DEV }}
 #         remote_user: ${{ secrets.USERNAME_DEV }}
 #         remote_key: ${{ secrets.SERVER_SSH_KEY }}
