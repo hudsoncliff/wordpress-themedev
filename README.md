@@ -96,8 +96,8 @@ build css js img files
 gulp build
 ```
 
-## Deployment
-`.github/workflows`の設定ファイルの環境に自動デプロイを設定することが可能。
+## Deployment
+`/.github/workflows`の`yml`ファイルに自動デプロイ環境が設定可能。
 SECRETSの値とブランチは環境に合わせて要調整。
 
 # All In On Migrationの容量開放
