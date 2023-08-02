@@ -66,8 +66,9 @@ phpcbf.executablePath
 ## wp-env
 
 ```yaml
-wp-env start
-wp-env stop
+wp-env start #start wpenv
+wp-env stop #close wpenv
+wp-env start --update #update plugins
 ```
 
 ## WorｄPressのブロック開発
