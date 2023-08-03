@@ -1,7 +1,7 @@
 <?php
 add_action(
     'wp_enqueue_scripts', function () {
-        wp_enqueue_style('sanitize', get_theme_file_uri('foundation/sanitize.min.css'), [], date('YmdGis', filemtime(dirname(__FILE__) . '/assets/css/foundation/sanitize.min.css')));
+        wp_enqueue_style('sanitize', get_theme_file_uri('assets/css/foundation/sanitize.min.css'), [], date('YmdGis', filemtime(dirname(__FILE__) . '/assets/css/foundation/sanitize.min.css')));
         wp_enqueue_style('main-style', get_theme_file_uri('/style.css'), ['sanitize'], date('YmdGis', filemtime(dirname(__FILE__) . '/style.css')));
     }
 );
