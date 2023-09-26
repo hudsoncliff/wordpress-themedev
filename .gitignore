@@ -10,3 +10,5 @@ composer.lock
 /wordpress
 
 *.sql
+
+style.css
