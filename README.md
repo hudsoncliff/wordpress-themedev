@@ -27,7 +27,7 @@ v16.13.1
 * 画像やjsやcssはsrc配下へ配置すること
 * 画像をsrcへ配置したあとは`gulp build`を実行するとassetsに画像が配置される
 * ローカル環境で開発をする際には、`yarn start`を実行するとファイル監視状態になる
-  * .scssファイルとjsファイルは編集するとコンパイルされたファイルが`assets`に配置される
+* .scssファイルとjsファイルは編集するとコンパイルされたファイルが`assets`に配置される
 
 ## File Structure
 
@@ -49,12 +49,12 @@ v16.13.1
 
 ## Recommended
 
- - npm or yarn
- - gulp
- - docker
- - wp-env
- - composer
- - phpcs
+* npm or yarn
+* gulp
+* docker
+* wp-env
+* composer
+* phpcs
 
 ## settings.json設定
 
@@ -107,7 +107,28 @@ gulp build
 `/.github/workflows`の`yml`ファイルに自動デプロイ環境が設定可能。
 SECRETSの値とブランチは環境に合わせて要調整。
 
-## All In On Migrationの容量開放
+## レスポンシブ対応でよく使うティップス
+
+### ブレークポイントでスタイルを切り替える
+
+```scss
+h2 {
+  font-size: 24px;
+  @include mq() {
+    font-size: 18px;
+  }
+}
+```
+
+### スマホの画面だけ改行を入れる
+
+```html
+<br class="sp">
+```
+
+## PHPのメモリ容量の上限設定変更が必要な場合
+
+All in on migrationのプラグインで大容量データをインポートするときに利用可能。
 
 ```yaml
 wp-env run cli vi .htaccess
