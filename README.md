@@ -56,14 +56,14 @@ v16.13.1
 * composer
 * phpcs
 
-## settings.json設定
+## settings.json setting
 
 ```yaml
 phpcs.executablePath
 phpcbf.executablePath
 ```
 
-## wp-env
+## wp-env commands
 
 ```yaml
 wp-env start #start wpenv
@@ -107,9 +107,16 @@ gulp build
 `/.github/workflows`の`yml`ファイルに自動デプロイ環境が設定可能。
 SECRETSの値とブランチは環境に合わせて要調整。
 
-## レスポンシブ対応でよく使うティップス
+### Using css variables
 
-### ブレークポイントでスタイルを切り替える
+```scss
+color: var(--wp--preset--color--priary);
+font-family: var(--wp--preset--font-size--font-lm);
+```
+
+## Responsive layout tips
+
+### Change style on breakpoint
 
 ```scss
 h2 {
@@ -120,7 +127,7 @@ h2 {
 }
 ```
 
-### スマホの画面だけ改行を入れる
+### Add new line in mobile devices
 
 ```html
 <br class="sp">
