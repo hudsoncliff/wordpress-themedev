@@ -16,6 +16,18 @@ a{
     }
 }
 
+p {
+    &.center {
+        text-align: center;
+    }
+    &.left {
+        text-align: left;
+    }
+    &.right {
+        text-align: right;
+    }
+}
+
 img{
     vertical-align: top;
     max-width: 100%;
