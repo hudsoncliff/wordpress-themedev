@@ -4,9 +4,6 @@ $breakpoints: ('sp': 'screen and (max-width: 480px)', //スマートフォン �
     'wide': 'screen and (min-width: 1280px)' //1280px以上の画面
 ) !default;
 
-$primary_color: var(--wp--preset--color--primary);
-$secondary_color: var(--wp--preset--color--secondary);
-
 @font-face {
     font-family: 'MyYuGothicM';
     font-weight: normal;
@@ -17,13 +14,6 @@ $secondary_color: var(--wp--preset--color--secondary);
         local('YuGothic-Regular');
     /* 游ゴシックMediumが存在しないWindows8.1用 */
 }
-
-$font-gothic: YuGothic,
-'Yu Gothic',
-sans-serif;
-$font-mincho: YuMincho,
-'Yu Mincho',
-serif;
 
 $main_width: 1280px;
 $mid_width: 960px;
