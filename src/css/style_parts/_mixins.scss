@@ -15,6 +15,14 @@ $breakpoints: ('sp': 'screen and (max-width: 480px)', //スマートフォン �
     /* 游ゴシックMediumが存在しないWindows8.1用 */
 }
 
+@mixin font-gothic {
+    font-family: 'Yu Gothic', sans-serif;
+}
+
+@mixin font-mincho {
+    font-family: 'Yu Mincho', serif;
+}
+
 $main_width: 1280px;
 $mid_width: 960px;
 
