@@ -1,7 +1,7 @@
 body{
     background-color: #fff;
     color: #333;
-    font-family: $font-gothic;
+    @include font-gothic;
     line-height: 1.5;
     font-size: 16px;
     font-feature-settings: "palt";
