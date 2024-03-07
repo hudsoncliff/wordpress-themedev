@@ -35,13 +35,16 @@ $mid_width: 960px;
 @mixin main-width {
     width: $main_width;
     max-width: 100%;
-    margin: 0 auto;
 }
 
 @mixin mid-width {
     width: $mid_width;
     max-width: 100%;
-    margin: 0 auto;
+}
+
+@mixin margin-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @mixin transition {
