@@ -30,6 +30,30 @@ p {
     &.right {
         text-align: right;
     }
+    // インライン画像のfloatや非表示指定
+    &.sp-img-float-right {
+        @include mq() {
+            & > img {
+                float: right;
+                margin-left: 20px;
+            }
+        }
+    }
+    &.sp-img-float-left {
+        @include mq() {
+            & > img {
+                float: left;
+                margin-right: 20px;
+            }
+        }
+    }
+    &.pc-img-hide {
+        @include mq(pc) {
+            & > img {
+                display: none;
+            }
+        }
+    }
 }
 
 img{
@@ -52,9 +76,16 @@ br {
     }
 }
 
-ul {
-	padding: 0;
+ul,ol {
+	padding: 0 0 0 20px;
 	margin: 0;
+    @include mq() {
+        padding-left: 10px;
+    }
+}
+
+.full-width {
+    @include full-width;
 }
 
 .sp-block {
@@ -85,8 +116,33 @@ ul {
     }
 }
 
+.sp-hide {
+    @include mq() {
+        display: none !important;
+    }
+}
+
+.pc-hide {
+    @include mq(pc) {
+        display: none !important;
+    }
+}
+
 .gap0 {
     gap: 0;
+}
+
+.sp-gap0 {
+    @include mq() {
+        gap: 0;
+    }
+}
+
+.sp-mh-a {
+    @include mq() {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 }
 
 .mv-0 {
@@ -103,8 +159,16 @@ ul {
     margin-top: 0 !important;
 }
 
+.mr-0 {
+    margin-right: 0 !important;
+}
+
 .mb-0 {
     margin-bottom: 0 !important;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
 }
 
 .ph-10 {
@@ -117,8 +181,40 @@ ul {
     padding-right: 20px;
 }
 
-
 .j-fe {
     justify-content: flex-end;
 }
-    
+
+.ai-c {
+    align-items: center;
+}
+
+.sp-w100p {
+    @include mq() {
+        width: 100%;
+    }
+}
+
+.sp-w80p {
+    @include mq() {
+        width: 80%;
+    }
+}
+
+.sp-ta-center {
+    @include mq() {
+        text-align: center;
+    }
+}
+
+.sp-center {
+    @include mq() {
+        text-align: center;
+    }
+}
+
+.sp-jc-c {
+    @include mq() {
+        justify-content: center;
+    }
+}   
