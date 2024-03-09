@@ -42,6 +42,12 @@ $mid_width: 960px;
     max-width: 100%;
 }
 
+@mixin full-width {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
 @mixin margin-auto {
     margin-left: auto;
     margin-right: auto;
