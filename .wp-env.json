@@ -10,7 +10,8 @@
     "https://downloads.wordpress.org/plugin/smart-slider-3.zip",
     "https://downloads.wordpress.org/plugin/breadcrumb-navxt.zip",
     "https://downloads.wordpress.org/plugin/debug-bar.zip",
-    "https://downloads.wordpress.org/plugin/widget-importer-exporter.zip"
+    "https://downloads.wordpress.org/plugin/widget-importer-exporter.zip",
+    "https://downloads.wordpress.org/plugin/wordpress-importer.zip"
   ],
   "themes": [
     "."
