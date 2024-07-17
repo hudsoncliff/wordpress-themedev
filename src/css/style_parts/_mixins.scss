@@ -53,6 +53,6 @@ $mid_width: 960px;
     margin-right: auto;
 }
 
-@mixin transition {
-    transition: 0.3s all;
+@mixin transition($duration: .3s) {
+    transition: $duration all;
 }
