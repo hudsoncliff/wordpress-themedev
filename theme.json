@@ -29,6 +29,54 @@
           "color": "#c1a56c"
         }
       ]
+    },
+    "typography": {
+      "fluid": {
+        "minViewportWidth": "375px",
+        "maxViewportWidth": "1280"
+      },
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "14px",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "22px",
+          "name": "Medium",
+          "fluid": {
+            "min": "18px"
+          }
+        },
+        {
+          "slug": "large",
+          "size": "28px",
+          "name": "Large",
+          "fluid": {
+            "min": "20px"
+          }
+        },
+        {
+          "slug": "extralarge",
+          "size": "35px",
+          "name": "Extra Large",
+          "fluid": {
+            "min": "22px"
+          }
+        }
+      ],
+      "fontFamilies": [
+        {
+          "fontFamily": "'Cormorant Infant', serif",
+          "name": "Cormorant Infant",
+          "slug": "cormorant-infant"
+        }
+      ]
+    },
+    "layout": {
+      "wideSize": "1920px",
+      "contentSize": "1280px"
     }
   }
 }
