@@ -4,6 +4,10 @@ $breakpoints: ('sp': 'screen and (max-width: 480px)', //スマートフォン �
     'wide': 'screen and (min-width: 1280px)' //1280px以上の画面
 ) !default;
 
+$size: ('regular': '400', // Regular
+'bold': '700' // Bold
+) !default;
+
 @font-face {
     font-family: 'MyYuGothicM';
     font-weight: normal;
@@ -15,16 +19,15 @@ $breakpoints: ('sp': 'screen and (max-width: 480px)', //スマートフォン �
     /* 游ゴシックMediumが存在しないWindows8.1用 */
 }
 
-@mixin font-gothic {
+@mixin font-gothic($size: regular) {
     font-family: 'Yu Gothic', sans-serif;
+    font-size: #{$size};
 }
 
-@mixin font-mincho {
+@mixin font-mincho($size: regular) {
     font-family: 'Yu Mincho', serif;
+    font-size: #{$size};
 }
-
-$main_width: 1280px;
-$mid_width: 960px;
 
 @mixin mq($breakpoint: mobile) {
     @media #{map-get($breakpoints, $breakpoint)} {
@@ -32,13 +35,13 @@ $mid_width: 960px;
     }
 }
 
-@mixin main-width {
-    width: $main_width;
+@mixin large-width {
+    width: var(--wp--style--global--wide-size);
     max-width: 100%;
 }
 
 @mixin mid-width {
-    width: $mid_width;
+    width: var(--wp--style--global--content-size);
     max-width: 100%;
 }
 
