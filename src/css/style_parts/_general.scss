@@ -5,10 +5,8 @@ html {
 body{
     background-color: #fff;
     color: #333;
-    @include font-gothic;
-    line-height: 1.5;
-    font-size: 16px;
     font-feature-settings: "palt";
+    @include font-mincho;
 }
 
 a{
