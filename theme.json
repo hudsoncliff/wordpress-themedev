@@ -78,5 +78,20 @@
       "wideSize": "1920px",
       "contentSize": "1280px"
     }
+  },
+  "styles": {
+    "typography": {
+      "fontSize": "16px"
+    },
+    "blocks": {
+      "core/paragraph": {
+        "color": {
+          "text": "var(--wp--preset--color--primary)"
+        },
+        "typography": {
+          "lineHeight": "1.75"
+        }
+      }
+    }
   }
 }
