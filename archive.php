@@ -15,7 +15,7 @@
 			</div>
 		    </a>
 		    <div class="post-meta">
-			<date><?php the_time('Y年m月d日');?></date>
+			<time><?php the_time('Y年m月d日');?></time>
 			<?php
 			    $cat_data = get_the_category(get_the_ID())[0];
 			    $cat_output = '<a href="' . get_category_link($cat_data->term_id) . '" class="post-category-tag">' . $cat_data->name . '</a>';
