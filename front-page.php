@@ -9,7 +9,7 @@
             <?php while( have_posts() ) : the_post(); ?>
                 <li <?php post_class(); ?>>
                     <a href="<?php echo get_the_permalink(); ?>">
-                        <date><?php the_time('Y年m月d日'); ?></date>
+                        <time><?php the_time('Y年m月d日'); ?></time>
                         <h3 class="new-posts-list-title">
                             <?php the_title(); ?>
                         </h3>
