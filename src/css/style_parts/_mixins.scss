@@ -4,7 +4,7 @@ $breakpoints: ('sp': 'screen and (max-width: 480px)', //スマートフォン �
     'wide': 'screen and (min-width: 1280px)' //1280px以上の画面
 ) !default;
 
-$size: ('regular': '400', // Regular
+$weight: ('regular': '400', // Regular
 'bold': '700' // Bold
 ) !default;
 
@@ -19,14 +19,14 @@ $size: ('regular': '400', // Regular
     /* 游ゴシックMediumが存在しないWindows8.1用 */
 }
 
-@mixin font-gothic($size: regular) {
+@mixin font-gothic($weight: regular) {
     font-family: 'Yu Gothic', sans-serif;
-    font-size: #{$size};
+    font-size: #{$weight};
 }
 
-@mixin font-mincho($size: regular) {
+@mixin font-mincho($weight: regular) {
     font-family: 'Yu Mincho', serif;
-    font-size: #{$size};
+    font-size: #{$weight};
 }
 
 @mixin mq($breakpoint: mobile) {
