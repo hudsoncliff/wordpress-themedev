@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp watch",
-    "build": "gulp style cssmin",
+    "build": "gulp build",
     "start-build": "wp-scripts start",
     "build:scripts": "wp-scripts build"
   },
