@@ -179,6 +179,20 @@ ul,ol {
     padding-right: 20px;
 }
 
+.sp-ph {
+    @include mq() {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+.sp-ph0 {
+    @include mq() {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
 .j-fe {
     justify-content: flex-end;
 }
