@@ -13,19 +13,17 @@ add_action(
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
         $defaults = [
-        'height' => 185,
-        'width' => 600,
-        'flex-height' => true,
-        'flex-width' => true,
-        'header-text' => array( 'site-title', 'site-description' ),
+            'height' => 185,
+            'width' => 600,
+            'flex-height' => true,
+            'flex-width' => true,
+            'header-text' => ['site-title', 'site-description'],
         ];
         add_theme_support('custom-logo', $defaults);
-        register_nav_menus(
-            [
+        register_nav_menus([
             'header-menu' => 'Header Menu',
             'footer-menu' => 'Footer Menu',
-            ]
-        );
+        ]);
     }
 );
 
