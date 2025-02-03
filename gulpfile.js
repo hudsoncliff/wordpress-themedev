@@ -134,3 +134,5 @@ exports.watch = function() {
     watch([paths.src + paths.css + '**/*.scss','!' + paths.src + paths.css + 'style.scss','!' + paths.src + paths.css + 'style_parts/**/*.scss'], normalScss)
     watch(paths.src + paths.js + '**/*.js', jsTrans)
 };
+
+exports.default = exports.build;
