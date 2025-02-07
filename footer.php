@@ -1,6 +1,8 @@
     </main>
     <footer id="footer">
-        <small>&copy; <?php bloginfo( 'name' ); ?></small>
+        <div class="copyright-wrap center">
+            <small>&copy; <?php bloginfo( 'name' ); ?></small>
+        </div>
     </footer>
 </div><!--#wrapper-->
 <?php wp_footer(); ?>
