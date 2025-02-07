@@ -1,0 +1,7 @@
+.btn-wrap {
+    width: 100%;
+    display: flex;
+    &.center {
+        justify-content: center;
+    }
+}
