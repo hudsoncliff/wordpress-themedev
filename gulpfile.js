@@ -135,4 +135,4 @@ exports.watch = function() {
     watch(paths.src + paths.js + '**/*.js', jsTrans)
 };
 
-exports.default = exports.build;
+exports.default = exports.watch;
